@@ -1,0 +1,14 @@
+@use "../../../../../../scss/utils/functions" as fn;
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(fn.rem(240), 1fr));
+  gap: fn.rem(20);
+  width: 100%;
+
+
+  @media screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}

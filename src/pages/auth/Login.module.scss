@@ -1,0 +1,126 @@
+@use "../../scss/global/colors" as *;
+@use "../../scss/utils/functions" as fn;
+
+.loginContainer {
+  display: flex;
+  min-height: 100vh;
+}
+
+.illustrationSection {
+  flex: 4;
+  background-color: $white-color;
+  padding: fn.rem(60);
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 992px) {
+    display: none;
+  }
+
+  .logoWrapper img {
+    width: fn.rem(170);
+    @media (max-width: 480px) {
+      width: fn.rem(120);
+    }
+  }
+
+  .heroImg {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 80%;
+    }
+  }
+}
+
+.formSection {
+  flex: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $white-color;
+  box-shadow: 0px 15px 90px rgba(0, 0, 0, 0.03);
+
+  @media (max-width: 992px) {
+    flex: 1;
+    width: 100%;
+    padding: fn.rem(20);
+  }
+
+  .formWrapper {
+    width: 100%;
+    max-width: 450px;
+    padding: fn.rem(40);
+
+    @media (max-width: 992px) {
+      max-width: 80%;
+    }
+
+    @media (max-width: 480px) {
+      max-width: 100%;
+      padding: fn.rem(20) 0;
+    }
+
+    .header {
+      margin-bottom: fn.rem(60);
+
+      @media (max-width: 480px) {
+        margin-bottom: fn.rem(30);
+      }
+      h1 {
+        font-size: 40px;
+        font-weight: 700;
+        color: $sec-text;
+        margin-bottom: 10px;
+
+        @media (max-width: 480px) {
+          font-size: 30px;
+        }
+      }
+      p {
+        font-size: 20px;
+        color: $primary-text;
+
+        @media (max-width: 480px) {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: fn.rem(25);
+}
+
+.togglePassword {
+  color: $btn-color;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+}
+
+.forgotPassword {
+  color: $btn-color;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: -10px;
+}
+
+.loginBtn {
+  height: 48px;
+  background: $btn-color;
+  border: none;
+  border-radius: 8px;
+  color: $white-color;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+}

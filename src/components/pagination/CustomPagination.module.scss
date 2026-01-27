@@ -1,0 +1,89 @@
+@use "../../scss/global/colors" as *;
+@use "../../scss/utils/functions" as fn;
+
+.paginationWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: fn.rem(20) 0;
+  color: $sec-text;
+  font-size: 14px;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+    justify-content: center;
+    gap: fn.rem(25);
+  }
+
+  .leftSection {
+    display: flex;
+    align-items: center;
+    gap: fn.rem(10);
+
+    .pageSizeContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: fn.rem(18);
+      padding: fn.rem(7) fn.rem(12);
+      background: rgba(33, 63, 125, 0.1);
+      border-radius: fn.rem(4);
+      color: $sec-text;
+      font-weight: 600;
+      cursor: pointer;
+      min-width: 70px;
+
+      @media (max-width: 480px) {
+        gap: fn.rem(12);
+        padding: fn.rem(7) fn.rem(10);
+      }
+    }
+  }
+
+  .rightSection {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: fn.rem(12);
+
+    @media (max-width: 480px) {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .pageItem {
+      cursor: pointer;
+      opacity: 0.6;
+      transition: 0.2s;
+
+      &:hover {
+        opacity: 1;
+      }
+      &.activePage {
+        opacity: 1;
+        font-weight: 500;
+      }
+    }
+
+    .navArrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: fn.rem(24);
+      height: fn.rem(24);
+      border-radius: 4px;
+      color: $sec-text;
+      cursor: pointer;
+
+      &.disabledArrow {
+        opacity: 0.3;
+        cursor: not-allowed;
+      }
+    }
+
+    .breakItem {
+      opacity: 0.6;
+      letter-spacing: 2px;
+    }
+  }
+}

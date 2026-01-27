@@ -1,0 +1,82 @@
+@use "../../../../scss/global/colors" as *;
+@use "../../../../scss/utils/functions" as fn;
+
+.usersPage {
+  display: flex;
+  flex-direction: column;
+  gap: fn.rem(40);
+
+  @media (max-width: 480px) {
+    gap: fn.rem(30);
+  }
+
+  .title {
+    font-size: 24px;
+    font-weight: 500;
+    color: $sec-text;
+  }
+}
+
+.loaderContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  width: 100%;
+}
+
+.spinner {
+  width: fn.rem(50);
+  height: fn.rem(50);
+  border: 3px solid rgba(57, 205, 204, 0.1);
+  border-radius: 50%;
+  border-top-color: $btn-color;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  text-align: center;
+  padding: fn.rem(20);
+
+  h2 {
+    color: $sec-text;
+    font-size: fn.rem(20);
+    margin-bottom: fn.rem(8);
+  }
+
+  p {
+    color: $primary-text;
+    margin-bottom: fn.rem(20);
+    max-width: fn.rem(300);
+  }
+
+  .retryBtn {
+    padding: fn.rem(10) fn.rem(24);
+    border: 1px solid $btn-color;
+    background: transparent;
+    color: $btn-color;
+    border-radius: fn.rem(8);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: $btn-color;
+      color: $white-color;
+    }
+  }
+}

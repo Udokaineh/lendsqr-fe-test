@@ -1,0 +1,18 @@
+@use "../../scss/utils/functions" as fn;
+
+.container {
+  margin-inline: 1.5rem;
+  max-width: fn.rem(1920);
+
+  @media screen and (min-width: 1940px) {
+    margin-inline: auto;
+  }
+}
+
+.containerAlt {
+  margin-inline: 0;
+
+  @media screen and (min-width: 1940px) {
+    margin-inline: auto;
+  }
+}

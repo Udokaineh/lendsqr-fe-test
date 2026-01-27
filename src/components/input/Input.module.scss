@@ -1,0 +1,49 @@
+@use "../../scss/global/colors" as *;
+@use "../../scss/utils/functions" as fn;
+
+.inputGroup {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: fn.rem(10);
+
+  .label {
+    font-weight: 500;
+    font-size: 14px;
+    color: $primary-text;
+    line-height: 100%;
+    text-transform: none !important;
+  }
+
+  .inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .field {
+      width: 100%;
+      height: fn.rem(40);
+      border: 1px solid rgba(84, 95, 125, 0.2);
+      border-radius: 8px;
+      padding: 0 fn.rem(15);
+      font-size: 14px;
+      color: rgba(84, 95, 125, 0.7);
+      outline: none;
+      background-color: transparent;
+      appearance: none;
+
+      &::placeholder {
+        color: rgba(84, 95, 125, 0.7);
+      }
+    }
+
+    .suffix {
+      position: absolute;
+      right: 15px;
+      cursor: pointer;
+      color: $sec-text;
+      font-size: 12px;
+      font-weight: 600;
+    }
+  }
+}

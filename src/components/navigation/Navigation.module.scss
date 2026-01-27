@@ -1,0 +1,210 @@
+@use "../../scss/global/colors" as *;
+@use "../../scss/utils/functions" as fn;
+
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: fn.rem(30);
+  height: fn.rem(100);
+  background-color: $white-color;
+  box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  @media (max-width: 768px) {
+    height: fn.rem(70);
+    padding: 0 fn.rem(15);
+  }
+
+  .leftSection {
+    display: flex;
+    align-items: center;
+    gap: fn.rem(10);
+
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      color: $sec-text;
+
+      @media (max-width: 1024px) {
+        display: block;
+      }
+
+      @media (max-width: 480px) {
+        width: fn.rem(20);
+      }
+    }
+  }
+
+  .searchContainer {
+    margin: 0 fn.rem(20);
+  }
+
+  .logo {
+    width: fn.rem(144);
+    height: fn.rem(30);
+
+    @media (max-width: 800px) {
+      width: fn.rem(120);
+    }
+    @media (max-width: 480px) {
+      width: fn.rem(100);
+    }
+  }
+
+  .searchContainer {
+    display: flex;
+    align-items: center;
+    width: fn.rem(400);
+    height: fn.rem(40);
+
+    @media (max-width: 1024px) {
+      width: fn.rem(250);
+    }
+    @media (max-width: 500px) {
+      display: none;
+    }
+
+    input {
+      flex: 1;
+      height: 100%;
+      border: 1px solid rgba($input-border, 0.2);
+      border-right: none;
+      border-radius: 8px 0 0 8px;
+      padding: fn.rem(12) fn.rem(20);
+      outline: none;
+      font-size: fn.rem(14);
+      color: $primary-text;
+
+      &::placeholder {
+        opacity: 0.5;
+      }
+    }
+
+    .searchButton {
+      width: fn.rem(56);
+      height: 100%;
+      background: $btn-color;
+      border: 1px solid $btn-color;
+      border-radius: 0 8px 8px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s ease;
+
+      &:hover {
+        background: darken($btn-color, 5%);
+      }
+
+      img {
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
+
+  .docsAndAvatarContainer {
+    display: flex;
+    align-items: center;
+    gap: fn.rem(30);
+    @media (max-width: 768px) {
+      gap: fn.rem(15);
+    }
+
+    .docsContainer {
+      display: flex;
+      align-items: center;
+      gap: fn.rem(47);
+      @media (max-width: 1024px) {
+        gap: fn.rem(20);
+      }
+
+      .docsLink {
+        color: $sec-text;
+        text-decoration: underline;
+
+        @media (max-width: 600px) {
+          display: none;
+        }
+      }
+
+      img {
+        cursor: pointer;
+
+        @media (max-width: 600px) {
+          width: fn.rem(20);
+          height: fn.rem(20);
+        }
+      }
+    }
+
+    .avatarContainer {
+      width: fn.rem(48);
+      height: fn.rem(48);
+      border-radius: 50%;
+      background: rgba(33, 63, 125, 0.16);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      @media (max-width: 480px) {
+        width: fn.rem(38);
+        height: fn.rem(38);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .avatarNameContainer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: fn.rem(10);
+
+      .nameContainer {
+        display: flex;
+        align-items: center;
+        gap: fn.rem(4);
+        cursor: pointer;
+
+        @media (max-width: 480px) {
+          .adedeji,
+          .dropdownIcon {
+            display: none;
+          }
+        }
+
+        .adedeji {
+          color: $sec-text;
+          font-weight: 500;
+        }
+
+        .dropdownIcon {
+          transition: transform 0.25s ease;
+        }
+
+        &:hover {
+          .dropdownIcon {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+}

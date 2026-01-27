@@ -1,0 +1,23 @@
+@use "../../scss/global/colors" as *;
+@use "../../scss/utils/functions" as fn;
+
+.main {
+  display: flex;
+  height: calc(100vh - 100px);
+  overflow: hidden;
+}
+
+
+
+.outletContainer {
+  flex: 1;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: $background;
+  padding: fn.rem(60);
+
+  @media screen and (max-width: 1200px) {
+    padding: fn.rem(30);
+  }
+}

@@ -1,0 +1,121 @@
+@use "../../../../../scss/global/colors" as *;
+@use "../../../../../scss/utils/functions" as fn;
+
+.backLink {
+  display: flex;
+  align-items: center;
+  gap: fn.rem(13);
+  text-decoration: none;
+  color: $primary-text;
+  margin-bottom: fn.rem(30);
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.headerTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: fn.rem(40);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: fn.rem(20);
+    margin-bottom: fn.rem(30);
+  }
+
+  h1 {
+    font-weight: 500;
+    font-size: 24px;
+    color: $sec-text;
+    margin: 0;
+
+    @media (max-width: 480px) {
+      font-size: 20px;
+    }
+  }
+}
+
+.actionButtons {
+  display: flex;
+  gap: fn.rem(20);
+
+  @media (max-width: 480px) {
+    width: 100%;
+    gap: fn.rem(10);
+  }
+
+  button {
+    width: 170px;
+    height: 40px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    @media (max-width: 480px) {
+      flex: 1;
+      width: auto;
+      font-size: 12px;
+      padding: 0 fn.rem(10);
+    }
+  }
+
+  .blacklistBtn {
+    border: 1px solid $blacklist-color;
+    color: $blacklist-color;
+
+    &:hover {
+      background-color: $blacklist-color;
+      color: $white-color;
+    }
+  }
+
+  .activateBtn {
+    border: 1px solid $btn-color;
+    color: $btn-color;
+
+    &:hover {
+      background-color: $btn-color;
+      color: $white-color;
+    }
+  }
+}
+
+.loaderContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  gap: 15px;
+
+  p {
+    color: $sec-text;
+    font-weight: 500;
+    font-size: 14px;
+  }
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(57, 205, 204, 0.1);
+  border-radius: 50%;
+  border-top-color: $btn-color;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

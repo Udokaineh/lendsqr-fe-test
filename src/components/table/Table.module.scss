@@ -1,0 +1,69 @@
+@use "../../scss/global/colors" as *;
+@use "../../scss/utils/functions" as fn;
+
+.tableContainer {
+  position: relative;
+  width: 100%;
+  background: $white-color;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: fn.rem(4);
+  overflow-x: auto;
+  padding: fn.rem(30) fn.rem(30) fn.rem(10);
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1000px;
+
+    th {
+      text-align: left;
+      font-size: 12px;
+      font-weight: 600;
+      color: $primary-text;
+
+      .headerContent {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        text-transform: uppercase;
+        padding-bottom: fn.rem(10);
+      }
+    }
+
+    tbody {
+      tr {
+        &:last-child {
+          td {
+            border-bottom: none;
+          }
+        }
+
+        td {
+          padding: fn.rem(20) 0;
+          border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+          font-size: 14px;
+          color: $sec-text;
+          white-space: nowrap;
+        }
+        &:hover {
+          background-color: rgba($btn-color, 0.06);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.actionCell {
+  position: relative;
+}
+.actionIcon {
+  cursor: pointer;
+  padding: 5px;
+  &:hover {
+    background: #f0f0f0;
+    border-radius: 50%;
+  }
+}

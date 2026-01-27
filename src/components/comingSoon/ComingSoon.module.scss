@@ -1,0 +1,37 @@
+@use "../../scss/global/colors" as *;
+@use "../../scss/utils/functions" as fn;
+
+.comingSoonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  padding: fn.rem(20);
+  text-align: center;
+
+  .content {
+    max-width: fn.rem(450);
+
+    h2 {
+      font-size: fn.rem(24);
+      color: $sec-text;
+      margin-bottom: fn.rem(12);
+      font-weight: 600;
+
+      @media (max-width: 480px) {
+        font-size: fn.rem(20);
+      }
+    }
+
+    p {
+      font-size: fn.rem(16);
+      color: $primary-text;
+      line-height: 1.6;
+      opacity: 0.8;
+
+      @media (max-width: 480px) {
+        font-size: fn.rem(14);
+      }
+    }
+  }
+}

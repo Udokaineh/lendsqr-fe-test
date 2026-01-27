@@ -1,0 +1,44 @@
+@use "../../scss/global/colors" as *;
+@use "../../scss/utils/functions" as fn;
+
+.card {
+  width: fn.rem(240);
+  height: fn.rem(160);
+  background: $white-color;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  padding: fn.rem(20) fn.rem(30);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .iconWrapper {
+    width: fn.rem(40);
+    height: fn.rem(40);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: fn.rem(22);
+      height: fn.rem(22);
+    }
+  }
+
+  .label {
+    text-transform: uppercase;
+    color: $primary-text;
+    font-weight: 500;
+    font-size: fn.rem(14);
+    margin: 0;
+  }
+
+  .count {
+    color: $sec-text;
+    font-size: fn.rem(24);
+    font-weight: 600;
+    margin: 0;
+  }
+}

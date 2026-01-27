@@ -1,0 +1,66 @@
+@use "../../scss/global/colors" as *;
+@use "../../scss/utils/functions" as fn;
+
+.notFoundContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  text-align: center;
+  padding: fn.rem(20);
+
+  .content {
+    max-width: fn.rem(400);
+    width: 100%;
+    h1 {
+      font-size: 64px;
+      color: $sec-text;
+      margin-bottom: fn.rem(10);
+      opacity: 0.2;
+
+      @media (max-width: 480px) {
+        font-size: fn.rem(48);
+      }
+    }
+
+    h2 {
+      font-size: 24px;
+      color: $sec-text;
+      margin-bottom: fn.rem(8);
+
+      @media (max-width: 480px) {
+        font-size: fn.rem(20);
+      }
+    }
+
+    p {
+      color: $primary-text;
+      margin-bottom: fn.rem(24);
+
+      @media (max-width: 480px) {
+        font-size: fn.rem(14);
+      }
+    }
+
+    .backBtn {
+      display: inline-block;
+      padding: fn.rem(10) fn.rem(24);
+      border: 1px solid $btn-color;
+      color: $btn-color;
+      border-radius: fn.rem(8);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+
+      @media (max-width: 480px) {
+        width: 100%;
+        padding: fn.rem(10);
+      }
+
+      &:hover {
+        background: $btn-color;
+        color: $white-color;
+      }
+    }
+  }
+}

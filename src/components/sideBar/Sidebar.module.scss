@@ -1,0 +1,243 @@
+@use "../../scss/global/colors" as *;
+@use "../../scss/utils/functions" as fn;
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: fn.rem(283);
+  height: 100%;
+  background-color: $white-color;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease-in-out;
+
+  @media (max-width: 1024px) {
+    position: fixed;
+    left: 0;
+    z-index: 99;
+    height: calc(100vh - fn.rem(100));
+    transform: translateX(-100%);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 480px) {
+    width: 85%;
+  }
+
+  &.open {
+    transform: translateX(0);
+  }
+}
+
+.overlay {
+  display: none;
+  @media (max-width: 1024px) {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 98;
+  }
+}
+
+.fixedTop {
+  padding: fn.rem(39) 0 fn.rem(20);
+  background-color: $white-color;
+  z-index: 2;
+
+  @media (max-width: 480px) {
+    padding: fn.rem(20) 0 fn.rem(10);
+  }
+
+  .switchContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: fn.rem(10);
+    padding-left: fn.rem(30);
+    @media (max-width: 480px) {
+      padding: fn.rem(20);
+    }
+
+    span {
+      color: $sec-text;
+    }
+
+    .dropdownIcon {
+      cursor: pointer;
+      transition: transform 0.25s ease;
+
+      &:hover {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.sideLinksContainer {
+  flex: 1;
+  width: 100%;
+  overflow-y: auto;
+  padding: fn.rem(20) 0 fn.rem(20);
+
+  @media (max-width: 480px) {
+    padding: fn.rem(20) 0 fn.rem(20);
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(33, 63, 125, 0.1);
+    border-radius: 10px;
+  }
+
+  .dashboardLink {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: fn.rem(10);
+    padding: fn.rem(10) fn.rem(30);
+    @media (max-width: 480px) {
+      padding: fn.rem(10) fn.rem(20);
+    }
+
+    span {
+      color: $sec-text;
+      opacity: 0.6;
+      @media (max-width: 480px) {
+        font-size: fn.rem(14);
+      }
+    }
+    &:hover {
+      background-color: rgba($btn-color, 0.06);
+      span {
+        opacity: 1;
+        @media (max-width: 480px) {
+          font-size: fn.rem(14);
+        }
+      }
+    }
+    &.active {
+      background-color: rgba($btn-color, 0.06);
+      border-left: 3px solid $btn-color;
+
+      span {
+        color: $sec-text;
+        opacity: 1;
+        font-weight: 500;
+      }
+
+      img {
+        filter: none;
+      }
+    }
+  }
+
+  .linkContainer {
+    display: flex;
+    flex-direction: column;
+    gap: fn.rem(10);
+
+    p {
+      color: $primary-text;
+      font-size: fn.rem(12);
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-top: fn.rem(30);
+      padding-left: fn.rem(30);
+      @media (max-width: 480px) {
+        padding-left: fn.rem(20);
+        margin-top: fn.rem(10);
+      }
+    }
+
+    .sidebarItem {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: fn.rem(10);
+      padding: fn.rem(10) fn.rem(30);
+      border-left: 3px solid transparent;
+      background-color: transparent;
+      @media (max-width: 480px) {
+        padding: fn.rem(10) fn.rem(20);
+        font-size: fn.rem(14);
+      }
+
+      span {
+        color: $sec-text;
+        opacity: 0.6;
+      }
+      &:hover {
+        background-color: rgba($btn-color, 0.06);
+        span {
+          opacity: 1;
+        }
+      }
+      &.active {
+        background-color: rgba($btn-color, 0.06);
+        border-left: 3px solid $btn-color;
+
+        span {
+          color: $sec-text;
+          opacity: 1;
+          font-weight: 500;
+        }
+
+        img {
+          filter: none;
+        }
+      }
+    }
+  }
+}
+
+.logoutContainer {
+  margin-top: auto;
+  padding: fn.rem(20) fn.rem(30) fn.rem(20);
+  border-top: 1px solid rgba($sec-text, 0.1);
+  background-color: $white-color;
+  @media (max-width: 480px) {
+    padding: fn.rem(14) fn.rem(20);
+  }
+
+  .logoutLink {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: fn.rem(10);
+    cursor: pointer;
+
+    span {
+      color: $sec-text;
+
+      @media (max-width: 480px) {
+        font-size: fn.rem(14);
+      }
+    }
+    &:hover {
+      span {
+        color: $sec-text;
+        opacity: 1;
+        font-weight: 500;
+        text-decoration: underline;
+
+        @media (max-width: 480px) {
+          font-size: fn.rem(14);
+        }
+      }
+    }
+  }
+  p {
+    color: $sec-text;
+    font-size: fn.rem(12);
+    margin-top: fn.rem(40);
+
+    @media (max-width: 480px) {
+      margin-top: fn.rem(20);
+    }
+  }
+}

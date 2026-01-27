@@ -1,0 +1,30 @@
+@use "../../../../../../scss/utils/functions" as fn;
+
+.statusBadge {
+  padding: 6px 16px;
+  border-radius: fn.rem(100);
+  font-size: 14px;
+
+  &.inactive {
+    background: rgba(84, 95, 125, 0.06);
+    color: #545f7d;
+  }
+  &.pending {
+    background: rgba(233, 178, 0, 0.1);
+    color: #e9b200;
+  }
+  &.active {
+    background: rgba(57, 205, 98, 0.06);
+    color: #39cd62;
+  }
+  &.blacklisted {
+    background: rgba(228, 3, 59, 0.1);
+    color: #e4033b;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: fn.rem(20);
+}

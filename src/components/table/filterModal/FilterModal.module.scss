@@ -1,0 +1,64 @@
+@use "../../../scss/global/colors" as *;
+@use "../../../scss/utils/functions" as fn;
+
+.filterContainer {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: fn.rem(270);
+  height: fit-content;
+  background: $white-color;
+  border: 1px solid rgba(84, 95, 125, 0.14);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  padding: fn.rem(30) fn.rem(20);
+  z-index: 100;
+
+  @media (max-width: 480px) {
+    width: fn.rem(240);
+  }
+
+}
+
+.filterForm {
+  display: flex;
+  flex-direction: column;
+  gap: fn.rem(20);
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: space-between;
+  margin-top: fn.rem(10);
+  gap: fn.rem(14);
+
+  @media (max-width: 480px) {
+    flex-direction: column-reverse;
+    gap: fn.rem(10);
+  }
+
+  button {
+    flex: 1;
+    padding: 10px 16px;
+    border-radius: fn.rem(8);
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+
+    @media (max-width: 480px) {
+      width: 100%;
+    }
+  }
+}
+
+.resetBtn {
+  background: transparent;
+  border: 1px solid $primary-text;
+  color: $primary-text;
+}
+
+.filterBtn {
+  background: $btn-color;
+  border: 1px solid $btn-color;
+  color: $white-color;
+}
