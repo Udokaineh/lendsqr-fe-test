@@ -57,9 +57,6 @@
     align-items: center;
     gap: fn.rem(10);
     padding-left: fn.rem(30);
-    @media (max-width: 480px) {
-      padding: fn.rem(20);
-    }
 
     span {
       color: $sec-text;
@@ -83,7 +80,7 @@
   padding: fn.rem(20) 0 fn.rem(20);
 
   @media (max-width: 480px) {
-    padding: fn.rem(20) 0 fn.rem(20);
+    padding: fn.rem(10) 0 fn.rem(20);
   }
 
   &::-webkit-scrollbar {
@@ -146,7 +143,7 @@
       font-size: fn.rem(12);
       font-weight: 500;
       text-transform: uppercase;
-      margin-top: fn.rem(30);
+      margin-top: fn.rem(20);
       padding-left: fn.rem(30);
       @media (max-width: 480px) {
         padding-left: fn.rem(20);
@@ -201,7 +198,7 @@
   border-top: 1px solid rgba($sec-text, 0.1);
   background-color: $white-color;
   @media (max-width: 480px) {
-    padding: fn.rem(14) fn.rem(20);
+    padding: fn.rem(20) fn.rem(20);
   }
 
   .logoutLink {

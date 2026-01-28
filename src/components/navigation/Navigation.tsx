@@ -41,7 +41,14 @@ const Navigation = ({ onToggleSidebar, searchTerm, onSearchChange, firstName, us
 
             <div className={styles.docsAndAvatarContainer}>
                 <div className={styles.docsContainer}>
-                    <Link to="/docs" className={styles.docsLink}>Docs</Link>
+                    <a
+                        href="https://udoka-ineh-lendsqr-fe-test-documentation.notion.site/Lendsqr-Admin-Dashboard-Implementation-Documentation-2f5b269e6a18803a8dc5fb05054a67d7?source=copy_link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.docsLink}
+                    >
+                        Docs
+                    </a>
                     <img src={notification} alt="notification icon" />
                 </div>
 
